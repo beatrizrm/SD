@@ -1,0 +1,86 @@
+balance
+top-up 2
+scan 3
+move 38.7372 -9.3023
+bike-up istt
+move 7 8
+move 8 9
+move 10 8
+move 3 4
+move 45 5
+move 5 6
+move 6 7
+scan 3
+move 38.7075 -9.1364
+bike-down prcm
+balance
+scan 3
+move 38.7075 -9.1364
+bike-up prcm
+move 7 8
+move 8 9
+move 10 8
+move 3 4
+move 45 5
+move 5 6
+move 6 7
+scan 3
+move 38.7372 -9.3023
+bike-down istt
+balance
+top-up 2
+scan 3
+bike-up istt
+move 7 8
+move 8 9
+move 10 8
+move 3 4
+move 45 5
+move 5 6
+move 6 7
+scan 3
+move 38.7075 -9.1364
+bike-down prcm
+balance
+scan 3
+move 38.7075 -9.1364
+bike-up prcm
+move 7 8
+move 8 9
+move 10 8
+move 3 4
+move 45 5
+move 5 6
+move 6 7
+scan 3
+move 38.7372 -9.3023
+bike-down istt
+balance
+top-up 2
+scan 3
+bike-up istt
+move 7 8
+move 8 9
+move 10 8
+move 3 4
+move 45 5
+move 5 6
+move 6 7
+scan 3
+move 38.7075 -9.1364
+bike-down prcm
+balance
+scan 3
+move 38.7075 -9.1364
+bike-up prcm
+move 7 8
+move 8 9
+move 10 8
+move 3 4
+move 45 5
+move 5 6
+move 6 7
+scan 3
+move 38.7372 -9.3023
+bike-down istt
+quit

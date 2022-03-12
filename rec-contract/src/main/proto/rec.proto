@@ -1,0 +1,44 @@
+//
+// Protocol buffers definition
+//
+syntax = "proto3";
+package pt.tecnico.rec.grpc;
+option java_multiple_files = true;
+
+message Tag {
+  int32 seq = 1;
+  int32 cid = 2;
+}
+
+message ReadRequest {
+  string id = 1;
+}
+
+message ReadResponse {
+  string value = 1;
+  Tag tag = 2;
+}
+
+message WriteRequest {
+  string id = 1;
+  string value = 2;
+  Tag tag = 3;
+}
+
+message WriteResponse {
+  string response = 1;
+}
+
+message PingRequest {
+  // empty
+}
+
+message PingResponse {
+	string outputText = 1;
+}
+  
+service RecordService {
+  rpc read(ReadRequest) returns (ReadResponse);
+  rpc write(WriteRequest) returns (WriteResponse);
+  rpc ping(PingRequest) returns (PingResponse);
+}

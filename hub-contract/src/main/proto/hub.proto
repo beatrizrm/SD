@@ -1,0 +1,96 @@
+//
+// Protocol buffers definition
+//
+syntax = "proto3";
+package pt.tecnico.bicloin.hub.grpc;
+import "google/type/money.proto";
+import "google/type/latlng.proto";
+option java_multiple_files = true;
+
+message BalanceRequest {
+  string user = 1;
+}
+
+message BalanceResponse {
+  google.type.Money balance = 1;
+}
+
+message TopUpRequest {
+  string user = 1;
+  google.type.Money amount = 2;
+  string phone_number = 3;
+}
+
+message TopUpResponse {
+  google.type.Money balance = 1;  
+}
+
+message InfoStationRequest {
+  string abrev = 1;
+}
+
+message InfoStationResponse {
+  string name = 1;
+  google.type.LatLng station_coords = 2;
+  int32 dock_capacity = 3;
+  google.type.Money prize = 4;
+  int32 available_bikes = 5;
+  int32 pickups = 6;
+  int32 deliveries = 7;
+}
+
+message LocateStationRequest {
+  google.type.LatLng user_coords = 1;
+  int32 k_stations = 2; 
+}
+
+message LocateStationResponse {
+  repeated string abrev = 1;
+}
+
+message BikeUpRequest {
+  string user = 1;
+  google.type.LatLng user_coords = 2;
+  string abrev = 3;
+}
+
+message BikeUpResponse {
+  string response = 1; 
+}
+
+message BikeDownRequest {
+  string user = 1;
+  google.type.LatLng user_coords = 2;
+  string abrev = 3;
+}
+
+message BikeDownResponse {
+  string response = 1;
+}
+
+message PingRequest {
+  // empty
+}
+
+message PingResponse {
+	string outputText = 1;
+}
+
+message SysStatusRequest {
+  // empty
+}
+
+message SysStatusResponse {
+  string outputText = 1;
+}
+  
+service HubService {
+  rpc balance(BalanceRequest) returns (BalanceResponse);
+  rpc top_up(TopUpRequest) returns (TopUpResponse);
+  rpc info_station(InfoStationRequest) returns (InfoStationResponse);
+  rpc locate_station(LocateStationRequest) returns (LocateStationResponse);
+  rpc bike_up(BikeUpRequest) returns (BikeUpResponse);
+  rpc bike_down(BikeDownRequest) returns (BikeDownResponse);
+  rpc ping(PingRequest) returns (PingResponse);
+  rpc sys_status(SysStatusRequest) returns (SysStatusResponse);
+}
